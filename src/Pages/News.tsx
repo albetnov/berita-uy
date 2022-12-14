@@ -7,11 +7,11 @@ import { ApiReturnProps } from "../Utils/Api";
 
 interface NewsProps {
   firstMethod: () => Promise<ApiReturnProps[]>;
-  secondMethod: (() => Promise<ApiReturnProps[]>) | null;
+  secondMethod?: (() => Promise<ApiReturnProps[]>) | null;
   title: string;
 }
 
-const News: Component<NewsProps> = ({ firstMethod, secondMethod, title }) => {
+const News: Component<NewsProps> = ({ firstMethod, secondMethod = null, title }) => {
   const [firstHalf, setFirstHalf] = createSignal<ApiReturnProps[]>([]);
   const [lastHalf, setLastHalf] = createSignal<ApiReturnProps[]>([]);
   const [highlight, setHighlight] = createSignal<ApiReturnProps | object>({});

@@ -17,42 +17,24 @@ export default function App() {
           element={<News firstMethod={techRecon} secondMethod={pcGames} title="Hot News" />}
         />
         <Route path="/detail/*key" component={Detail} />
-        <Route
-          path="/tech/news"
-          element={<News firstMethod={techNews} secondMethod={null} title="Tech News" />}
-        />
-        <Route
-          path="/tech/setup"
-          element={<News firstMethod={techSetup} secondMethod={null} title="Tech Setup" />}
-        />
+        <Route path="/tech/news" element={<News firstMethod={techNews} title="Tech News" />} />
+        <Route path="/tech/setup" element={<News firstMethod={techSetup} title="Tech Setup" />} />
         <Route
           path="/tech/review"
-          element={<News firstMethod={techReview} title="Tech Review" secondMethod={null} />}
+          element={<News firstMethod={techReview} title="Tech Review" />}
         />
-        <Route
-          path="/tech/tips"
-          element={<News title="Tech Tips" firstMethod={techTips} secondMethod={null} />}
-        />
-        <Route
-          path="/games/news"
-          element={<News title="Games News" firstMethod={gamesNews} secondMethod={null} />}
-        />
+        <Route path="/tech/tips" element={<News title="Tech Tips" firstMethod={techTips} />} />
+        <Route path="/games/news" element={<News title="Games News" firstMethod={gamesNews} />} />
         <Route
           path="/games/review"
-          element={<News firstMethod={gamesReview} title="Games Review" secondMethod={null} />}
+          element={<News firstMethod={gamesReview} title="Games Review" />}
         />
         <Route
           path="/games/console"
-          element={<News firstMethod={consoleGames} title="Console Games" secondMethod={null} />}
+          element={<News firstMethod={consoleGames} title="Console Games" />}
         />
-        <Route
-          path="/games/pc"
-          element={<News title="PC Games" firstMethod={pcGames} secondMethod={null} />}
-        />
-        <Route
-          path="/games/lazy"
-          element={<News firstMethod={lazyTalk} title="Lazy Talk" secondMethod={null} />}
-        />
+        <Route path="/games/pc" element={<News title="PC Games" firstMethod={pcGames} />} />
+        <Route path="/games/lazy" element={<News firstMethod={lazyTalk} title="Lazy Talk" />} />
       </Routes>
     </>
   );
