@@ -17,4 +17,4 @@ Simply
 Thanks to:
 
 - This website heavily inspired from [Bloomberg Redesign By Nicholas Ergemla](https://dribbble.com/shots/18077971-Bloomberg-Redesign-UI)
-- And of course the API Source [Unofficial Lazy Media API by Nicla Deastra](https://github.com/NicolaDeastra/The-Lazy-Media-api)
+- And of course the API Source [Unofficial Lazy Media API by Nicola Deastra](https://github.com/NicolaDeastra/The-Lazy-Media-api)
