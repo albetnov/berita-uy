@@ -24,4 +24,4 @@ Thanks to:
 This website is LIVE, you can visit them below:
 
 - [Primary Link](https://berita-uy.vercel.app/)
-- [Secondary Link](http://simdkelompok2.s3-website-us-east-1.amazonaws.com/games/pc)
+- [Secondary Link](http://simdkelompok2.s3-website-us-east-1.amazonaws.com)
