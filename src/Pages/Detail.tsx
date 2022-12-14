@@ -85,7 +85,7 @@ const Detail: Component = () => {
               <div class="text-zinc-800 mt-5 border border-slate-300 rounded-xl p-3 overflow-y-auto">
                 <For each={getContent()}>
                   {(item) => {
-                    if (item.includes(".png")) {
+                    if (item.includes(".jpg") || item.includes(".png") || item.includes(".jpeg")) {
                       return <img src={item} />;
                     } else if (item.includes("embed")) {
                       return (
@@ -97,6 +97,26 @@ const Detail: Component = () => {
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowfullscreen
                         ></iframe>
+                      );
+                    } else if (item.includes("https")) {
+                      return (
+                        <a
+                          href={item.substring(item.indexOf("https"))}
+                          class="text-sky-300 trasition-all delay-100 hover:underline"
+                          target="_blank"
+                        >
+                          {item}
+                        </a>
+                      );
+                    } else if (item.includes("pic.")) {
+                      return (
+                        <a
+                          href={"https://" + item.substring(item.indexOf("pic"))}
+                          class="text-sky-300 trasition-all delay-100 hover:underline"
+                          target="_blank"
+                        >
+                          {item}
+                        </a>
                       );
                     } else {
                       return <p>{item}</p>;
