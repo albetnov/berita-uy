@@ -4,6 +4,7 @@ import MenuButton from "./MenuButton";
 import { toast } from "solid-toast";
 import { For } from "solid-js";
 import { A } from "@solidjs/router";
+import Logo from "../Logo";
 
 export default function Topbar() {
   return (
@@ -14,9 +15,7 @@ export default function Topbar() {
           <div class="pr-3 w-fit">
             <Menu />
           </div>
-          <h1 class="font-bold text-2xl mr-auto ml-auto">
-            <A href="/">Berita Uy</A>
-          </h1>
+          <Logo />
         </div>
       </div>
 
@@ -36,10 +35,7 @@ export default function Topbar() {
               </MenuButton>
             </div>
           </div>
-          <h1 class="font-bold text-4xl text-center">
-            {" "}
-            <A href="/">Berita Uy</A>
-          </h1>
+          <Logo />
           <button
             onClick={() => toast.error("Ga di implement mas, hehehe")}
             class="border border-black px-5 py-1 transition-all delay-100 hover:bg-black hover:text-white"
