@@ -31,6 +31,7 @@ const News: Component<NewsProps> = ({ firstMethod, secondMethod = null, title })
 
   const fetchNews = async (page = 1) => {
     const result = await firstMethod(page);
+    console.log(result);
     if (!result) {
       setSomethingWrong(true);
       return;

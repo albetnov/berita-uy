@@ -11,7 +11,7 @@ const Detail: Component = () => {
   const fetchDetail = async () => {
     const result = await detail(params.key);
 
-    if ("message" in result && result.message.includes("not found")) {
+    if (!result || ("message" in result && result.message.includes("not found"))) {
       setNotFound(true);
       return;
     }
@@ -32,7 +32,7 @@ const Detail: Component = () => {
       when={!notFound()}
       fallback={
         <div class="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-white">
-          <h1 class="text-6xl font-bold text-center">404</h1>
+          <h1 class="text-6xl font-bold text-center">404: Not Found</h1>
         </div>
       }
     >
