@@ -1,10 +1,12 @@
+import { lazy } from "solid-js";
 import Topbar from "./Components/Topbar/Topbar";
 import { Routes, Route } from "@solidjs/router";
 import { Toaster } from "solid-toast";
 import News from "./Pages/News";
 import { techNews, techRecon, techReview, techSetup, techTips } from "./Utils/Tech";
 import { consoleGames, gamesNews, gamesReview, lazyTalk, pcGames } from "./Utils/Games";
-import Detail from "./Pages/Detail";
+const Detail = lazy(() => import("./Pages/Detail"));
+const PageNotFound = lazy(() => import("./Components/PageNotFound"));
 
 export default function App() {
   return (
@@ -35,6 +37,7 @@ export default function App() {
         />
         <Route path="/games/pc" element={<News title="PC Games" firstMethod={pcGames} />} />
         <Route path="/games/lazy" element={<News firstMethod={lazyTalk} title="Lazy Talk" />} />
+        <Route path="*" component={PageNotFound} />
       </Routes>
     </>
   );

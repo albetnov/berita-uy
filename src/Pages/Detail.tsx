@@ -1,5 +1,6 @@
-import { useParams } from "@solidjs/router";
+import { useNavigate, useParams } from "@solidjs/router";
 import { Component, createMemo, createSignal, For, onMount, Show } from "solid-js";
+import PageNotFound from "../Components/PageNotFound";
 import Tag from "../Components/Tag";
 import { ApiDetailProps, detail } from "../Utils/Api";
 
@@ -28,14 +29,7 @@ const Detail: Component = () => {
   });
 
   return (
-    <Show
-      when={!notFound()}
-      fallback={
-        <div class="fixed top-0 left-0 w-full h-screen flex items-center justify-center bg-white">
-          <h1 class="text-6xl font-bold text-center">404: Not Found</h1>
-        </div>
-      }
-    >
+    <Show when={!notFound()} fallback={<PageNotFound />}>
       <section class="p-10">
         <div class="flex flex-col lg:flex-row items-start gap-3 justify-around">
           <Show

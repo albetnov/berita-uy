@@ -3,6 +3,7 @@ import Card from "../Components/Card";
 import CardLoading from "../Components/CardLoading";
 import Highlight from "../Components/News/Highlight";
 import HighlightLoading from "../Components/News/HighlightLoading";
+import PageNotFound from "../Components/PageNotFound";
 import { ApiReturnProps } from "../Utils/Api";
 
 interface NewsProps {
@@ -51,14 +52,7 @@ const News: Component<NewsProps> = ({ firstMethod, secondMethod = null, title })
   };
 
   return (
-    <Show
-      when={!somethingWrong()}
-      fallback={
-        <div class="h-screen w-full flex items-center justify-center text-4xl font-bold">
-          404: Ups Next Page not found.
-        </div>
-      }
-    >
+    <Show when={!somethingWrong()} fallback={<PageNotFound />}>
       <section class="p-3">
         <h2 class="text-4xl font-bold mb-10 mt-3 mx-5">{title}</h2>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 items-start">
